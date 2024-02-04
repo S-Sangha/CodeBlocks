@@ -211,31 +211,25 @@ def run_epoch(
     device = torch.device('cpu')
     dtype = torch.float32 
 
-    epochs = 10
+    for t, (x, y) in loader:
+        model.train()  # put model to training mode
+        x = x.to(device=device, dtype=dtype)
+        y = y.to(device=device, dtype=dtype)
 
-    for e in range(epochs):
-        for t, (x, y) in loader:
-            model.train()  # put model to training mode
-            x = x.to(device=device, dtype=dtype)
-            y = y.to(device=device, dtype=dtype)
+        scores = model(x)
+        loss = F.cross_entropy(scores, y)
 
-            scores = model(x)
-            loss = F.cross_entropy(scores, y)
+        # Zero out all of the gradients for the variables which the optimizer
+        # will update.
+        optimizer.zero_grad()
 
-            # Zero out all of the gradients for the variables which the optimizer
-            # will update.
-            optimizer.zero_grad()
+        loss.backward()
 
-            loss.backward()
-
-            # Update the parameters of the model using the gradients
-            optimizer.step()
-
-            if t % 5 == 0:
-                print('Epoch: %d, Iteration %d, loss = %.4f' % (e, t, loss.item()))
+        # Update the parameters of the model using the gradients
+        optimizer.step()
 
 if __name__ == "__main__":
-    dir = "/home/abdul/IC_Hack/CodeBlocks/dataset/"
+    dir = "/vol/bitbucket/arj220/ichack/CodeBlocks/dataset/"
     n = 1
     mean = torch.Tensor([0.485, 0.456, 0.406])
     std = torch.Tensor([0.229, 0.224, 0.225])  
@@ -299,18 +293,11 @@ if __name__ == "__main__":
     torch.save(model.state_dict(), 'model.pt')
     
     
-    # for epoch in range(1, 10):
-    #     print("\nEpoch {}:".format(epoch))
-    #     train_loss = run_epoch(model, dataloaders["train"], optimizer)
+    for epoch in range(1, 10):
+        print("\nEpoch {}:".format(epoch))
 
-    #     if epoch % 4 == 0:
-    #         valid_loss = run_epoch(model, dataloaders["val"])
-
-    #         if valid_loss < best_loss:
-    #             best_loss = valid_loss
-    #             step = int(epoch * len(dataloaders["train"]))
-    #             torch.save(model.state_dict(), 'model.pt')
-
+        train_loss = run_epoch(model, dataloaders["train"], optimizer)
+        torch.save(model.state_dict(), 'model.pt')
 
 
    
