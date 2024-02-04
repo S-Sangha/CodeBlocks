@@ -143,7 +143,7 @@ def annotate_image(image):
 
 
 if __name__ == "__main__":
-    image = cv2.imread('/Users/sksangha/year4/ichack24/CodeBlocks/simple_program_examples/eg12.jpg')
+    image = cv2.imread('/Users/sksangha/year4/ichack24/CodeBlocks/simple_program_examples/eg11.jpg')
     # image = cv2.imread('/Users/sksangha/year4/ichack24/CodeBlocks/images/flash.jpg')
     annotate_image(image)
     analyse_image(image)

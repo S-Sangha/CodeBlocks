@@ -140,7 +140,9 @@ def main(img, input):
                 else:
                     _, _, curr_pos = execute_code(curr_pos + 1, acc, sys_out)
                     if processed_image[curr_pos] == "else":
-                        acc, sys_out, curr_pos = execute_code(curr_pos + 1, acc, sys_out)          
+                        acc, sys_out, curr_pos = execute_code(curr_pos + 1, acc, sys_out)
+                        if (curr_pos != "end"):
+                            error() #end          
             elif tok == "end":
                 return acc, sys_out, curr_pos
             elif tok == "else":
