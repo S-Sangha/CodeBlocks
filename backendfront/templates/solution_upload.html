@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload Page</title>
+    <style>
+	/* style.css */
+
+/* Add a new class for the "Difficulty" section */
+.difficulty-section {
+    text-align: right;
+}
+
+/* Style for the "Difficulty" text */
+.difficulty-text {
+    font-size: 14px; /* Adjust the font size as needed */
+    margin-bottom: 5px; /* Add some margin below the text */
+    color: #555; /* Set the color for the text */
+}
+
+/* Other styles remain the same */
+body {
+    font-family: 'Courier New', monospace;
+    margin: 20px;
+    background-color: #f0f8ff; /* Light Blue background color */
+    color: #000; /* Set text color to black */
+}
+
+h1 {
+    color: #1e90ff; /* Royal Blue heading color */
+    text-align: center; /* Center align the heading */
+}
+
+/* Border around the section with text */
+#textSection {
+    border: 2px solid #1e90ff; /* Royal Blue border color */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto; /* Center the section horizontally */
+    max-width: 600px; /* Set max width for better readability */
+    text-align: center; /* Center align text inside the section */
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-indent {
+    text-align: right; /* Right-align text */
+}
+
+#starsContainer {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    color: #ffd700; /* Yellow star color */
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.star-empty {
+    color: #d3d3d3; /* Light Grey unfilled star color */
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label.custom-file-upload,
+#checkButton {
+    font-family: 'Courier New', monospace;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4169e1; /* Royal Blue button background color */
+    color: #fff; /* Button text color */
+    border: 2px solid #4169e1; /* Royal Blue button border color */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#imagePreviewContainer {
+    display: none;
+}
+
+#imagePreview {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
+}
+	</style>
+	
+</head>
+<body>
+   
+    <!-- "Text Section" with a border -->
+    <div id="textSection">
+        <h1>{{question['number']}}</h1>
+
+        <!-- "Upload Image" Section -->
+        <div>
+            <p class="small-text">{{question['q']}}</p>
+            <label for="fileInput" class="custom-file-upload">
+                <input type="file" id="fileInput" name="file" accept=".jpg, .jpeg, .png" onchange="handleFileChange()">
+                Select / Re-upload CodeBlocks
+            </label>
+        </div>
+
+        <!-- "Image Preview" Section -->
+        <div id="imagePreviewContainer">
+            <p>Preview:</p>
+            <img id="imagePreview" alt="Selected Image">
+        </div>
+
+        <!-- "Check" Button -->
+        <div>
+            <button id="checkButton" type="button" onclick="checkImage()" style="display: none;">Check!</button>
+        </div>
+    </div>
+
+    <script>
+        function handleFileChange() {
+            const fileInput = document.getElementById('fileInput');
+            const checkButton = document.getElementById('checkButton');
+            const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+            const imagePreview = document.getElementById('imagePreview');
+
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                    imagePreviewContainer.style.display = 'block';
+                    checkButton.style.display = 'inline-block';
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                // Clear image preview if no file selected
+                imagePreview.src = '';
+                imagePreviewContainer.style.display = 'none';
+                checkButton.style.display = 'none';
+            }
+        }
+
+        function checkImage() {
+            var imageInput = document.getElementById('fileInput');
+			console.log(imageInput);
+		
+
+			
+            var formData = new FormData();
+			console.log(imageInput.files[0]);
+            formData.append('image', imageInput.files[0]);
+			console.log(formData[0]);
+			
+			fetch('/uploadimage', {
+                    method: 'POST',
+                    body: formData,
+                }).then(response=>{
+				console.log(response.data);
+				})
+				
+			window.location.pathname = "/q1answer";
+               
+        }
+    </script>
+</body>
+</html>
