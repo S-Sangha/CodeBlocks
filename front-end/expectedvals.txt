@@ -1,0 +1,27 @@
+
+# Hours to minutes
+Expected code output: "x60"
+Expected print output: ""
+
+# Increment favourite number
+Expected code output: "+1"
+
+# If statements
+Expected code output: "if divisible 5 then\n÷ 5"
+
+# Adjust and print
+Expected code output: "if > 2 then\n-1\nprint\nelse\n+1\nprint\nend
+
+# Multiples of 3
+Expected code output: "repeat 20:\nif divisible 3 then\nprint\nend\n+ 1\nend"
+Expected print output: "0\n3\n6\n9\n12\n15\n18"
+Expected input var: 0
+Expected final var: 20
+
+# Final challenge: while loops
+Expected code output: "while < 30\nif not divisible 5 then\nprint\n+ 1"
+
+
+
+
+
