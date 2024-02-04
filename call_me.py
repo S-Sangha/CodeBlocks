@@ -216,7 +216,23 @@ def main(img, input):
 def evaluate_submission():
 
     def generate_advice():
-        return "advice generated..."
+        hints_string = ""
+        if file_image1 == 1:
+            if (program_string.rfind("+") < 0) | (not program_string.rfind("1") < 0):
+                hints_string += "Hint: An arithmetic command normally has an operand (such as +, -, etc.) followed by a value to be used with this operand"
+        elif file_image1 == 2:
+            if (program_string.rfind("x") < 0) | (not program_string.rfind("60") < 0):
+                    hints_string += "Hint: You know that there are 60 minutes in one hour. There are also 2 x 60 minutes in 2 hours and 3 x 60 minutes in 3 hours. How could you calculate this for an unknown number of hours?"
+        elif file_image1 == 3:
+            if (program_string.rfind(">") < 0):
+                    hints_string += "Hint: To show that a number is greater than another number you can use the '>' symbol"
+        elif file_image1 == 6:
+            if (program_string.rfind("not") < 0):
+                    hints_string += "Hint: Try combining the 'not' block with others to write a negated condition"
+            if (program_string.rfind("+") < 0):
+                    hints_string += "Hint: Remember to add to your value at the end of each loop, otherwise you'll be stuck in the loop forever!"
+        return hints_string
+
 
     global image
     global file_image1
@@ -239,4 +255,6 @@ def evaluate_submission():
 
 #sysout1
         
+
+
 
