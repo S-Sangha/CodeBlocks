@@ -1,0 +1,154 @@
+/* style2.css */
+
+body {
+    font-family: 'Courier New', monospace;
+    margin: 20px auto; /* Center the body horizontally */
+    background-color: #f0f8ff; /* Light Blue background color */
+    color: #000; /* Set text color to black */
+    border: 2px solid #1e90ff; /* Royal Blue border color */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px; /* Set max width for better readability */
+    text-align: center; /* Center align text inside the section */
+}
+
+h1 {
+    color: #1e90ff; /* Royal Blue heading color */
+    text-align: center; /* Center align the heading */
+}
+
+/* Border around the section with text */
+#tutorialSection {
+    border: 2px solid #1e90ff; /* Royal Blue border color */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto; /* Center the section horizontally */
+    max-width: 600px; /* Set max width for better readability */
+    text-align: center; /* Center align text inside the section */
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+/* Style for the "Tutorial Content" text */
+#tutorialSection p {
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-bottom: 10px; /* Add some margin below the text */
+    text-align: : center;;
+}
+
+/* Back to Homepage Link Styles */
+.back-to-homepage {
+    display: block;
+    margin-top: 20px;
+    color: #1e90ff; /* Royal Blue text color */
+    text-decoration: underline; /* Add underline to the link */
+    cursor: pointer;
+}
+
+/* Additional styles for smaller heading and text */
+.small-heading {
+    font-size: 18px; /* Adjust the font size for the heading */
+}
+
+.small-text {
+    font-size: 14px; /* Adjust the font size for the text */
+}
+
+h1 {
+    color: #1e90ff; /* Royal Blue heading color */
+    text-align: center; /* Center align the heading */
+}
+
+/* Button Grid Styles */
+#buttonGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px; /* Add some gap between buttons */
+    grid-row-gap: 10px; /* Add some gap between buttons */ 
+    /* margin: 0 auto Center the grid horizontally within the border */
+    margin-left: 100px; /* Adjust the right margin as needed */
+}
+/* #buttonGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+/* } */ 
+
+.button {
+    text-align: center;
+}
+
+
+/* Adjusted button styles */
+.red-button {
+    background-color: #FFCC99 !important; /* Light Red */
+    width: 100%; /* Set width to 100% to ensure each button takes the full width */
+    padding: 10px 30px; /* Adjust padding as needed */
+}
+
+.blue-button {
+    background-color:#ADD8E6 !important; /* Light Blue */
+    width: 50%; /* Set width to 100% to ensure each button takes the full width */
+    padding: 10px 30px; /* Adjust padding as needed */
+
+}
+
+.green-button {
+    background-color:#D8BFD8 !important; /* Light Green */
+    width: 100%; /* Set width to 100% to ensure each button takes the full width */
+    padding: 10px 30px; /* Adjust padding as needed */
+
+}
+
+.button {
+    background-color: transparent; /* Remove background color */
+    border: 1px solid #1e90ff; /* Royal Blue button border color */
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove default underline for links */
+    margin: 0; /* Add a small margin between buttons */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.red-popup { background-color: #FFCC99; }
+.blue-popup { background-color: #ADD8E6; }
+.green-popup { background-color: #D8BFD8; }
+
+/* Add the following styles for the close button */
+.popup {
+    position: relative;
+    display: none;
+    border: 1px solid #1e90ff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.show-popup {
+    display: block;
+}
+
+.close {
+    color: #1e90ff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/* Add or modify styles as needed */
+
+
+/* Add this CSS for the "Home" button */
+.home-button {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px; /* Adjust as needed for spacing */
+    text-decoration: none;
+    color: #1e90ff; /* Royal Blue text color */
+}
+

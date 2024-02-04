@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload Page</title>
+    <link rel="stylesheet" href="style_increment.css">
+</head>
+<body>
+   
+    <!-- "Text Section" with a border -->
+    <div id="textSection">
+        <a href="index.html" class="home-button">Home</a>
+
+        <h1>Increment favourite number</h1>
+
+        <!-- "Upload Image" Section -->
+        <div>
+            <p>Write a program which increments (adds 1 to) your favourite number</p>
+            <label for="fileInput" class="custom-file-upload">
+                <input type="file" id="fileInput" name="file" accept=".jpg, .jpeg, .png" onchange="handleFileChange()">
+                Select / Re-upload CodeBlocks
+            </label>
+        </div>
+
+        <!-- "Image Preview" Section -->
+        <div id="imagePreviewContainer">
+            <p>Preview:</p>
+            <img id="imagePreview" alt="Selected Image">
+            <p>En</p>
+        </div>
+
+         <!-- "Check" Button -->
+         <div>
+            <button id="checkButton" type="button" onclick="checkImage()" style="display: none;">Check!</button>
+        </div>
+
+        <!-- Popup Container -->
+        <div id="popupContainer" class="popup-container">
+            <div id="popup" class="popup">
+                <span class="close-popup" onclick="closePopup()">&times;</span>
+                <p class="popup-content">Incorrect :( </p>
+                <p class="popup-content">We recommend you to keep trying and take a hint instead of giving up!</p>
+                
+                <div class="button-row">
+                    <button class="hint-button" onclick="showHint()">Get Hint</button>
+                    <button class="give-up-button" type="button" onclick="redirectSolution()">Give Up</button>
+
+                </div>
+                
+                <!-- Add this new popup for the hint -->
+                <div id="hintPopupContainer" class="popup-container">
+                    <div id="hintPopup" class="popup">
+                        <span class="close-popup" onclick="closeHintPopup()">&times;</span>
+                        <p class="popup-content">To add a number, we use the '+' block followed by the number we wish to add</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+        
+    </div>
+
+    <!-- Add this script inside the head or at the end of the body section in your HTML file -->
+    <script>
+        function handleFileChange() {
+            const fileInput = document.getElementById('fileInput');
+            const checkButton = document.getElementById('checkButton');
+            const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+            const imagePreview = document.getElementById('imagePreview');
+
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                    imagePreviewContainer.style.display = 'block';
+                    checkButton.style.display = 'inline-block';
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                // Clear image preview if no file selected
+                imagePreview.src = '';
+                imagePreviewContainer.style.display = 'none';
+                checkButton.style.display = 'none';
+            }
+        }
+
+        function checkImage() {
+            // Simulate correctness check - replace this with your actual implementation
+            const isCorrect = 0; // Change this value based on your correctness check
+
+            if (isCorrect) {
+                // Redirect to 'Correct' page
+                window.location.href = 'arbritrary_correct.html';
+            } else {
+                window.location.href = 'arbritrary_incorrect.html';
+                
+                // Show incorrect popup
+                // document.getElementById('popupContainer').style.display = 'block';
+
+                // const hint = confirm('Incorrect! Do you want a hint?');
+
+                // if (hint) {
+                //     // Add your logic to provide a hint
+                //     alert('Hint: Your hint goes here.');
+                // }
+            }
+        }
+
+
+
+        function closePopup() {
+            document.getElementById('popupContainer').style.display = 'none';
+        }
+
+        // Function to redirect to the solution page
+        function redirectSolution() {
+            window.location.href = 'arbritrary_incorrect.html';
+        }
+
+        function showHint() {
+            document.getElementById('hintPopupContainer').style.display = 'block';
+        }
+
+        function closeHintPopup() {
+            document.getElementById('hintPopupContainer').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

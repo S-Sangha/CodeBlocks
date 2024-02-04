@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question 1</title>
+</head>
+<body>
+    <h1>Q1. Write a program which prints the numbers from 0-20 divisible by 3</h1>
+    
+    <form id="fileUploadForm" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="file" accept=".txt, .pdf, .jpg, .png" onchange="displayImage()" required>
+        <button type="button" onclick="uploadFile()">Upload File</button>
+    </form>
+
+    <div id="uploadStatus"></div>
+
+    <div id="imagePreviewContainer">
+        <p>Selected Image:</p>
+        <img id="imagePreview" alt="Selected Image" style="max-width: 100%; max-height: 200px;">
+        <button type="button">Check</button>
+    </div>
+
+
+
+    <script>
+        function displayImage() {
+            const fileInput = document.getElementById('fileInput');
+            const imagePreview = document.getElementById('imagePreview');
+            const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                    imagePreviewContainer.style.display = 'block';
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                // Clear image preview if no file selected
+                imagePreview.src = '';
+                imagePreviewContainer.style.display = 'none';
+            }
+        }
+
+        function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const uploadStatus = document.getElementById('uploadStatus');
+
+            const file = fileInput.files[0];
+
+            if (file) {
+                const formData = new FormData();
+                formData.append('file', file);
+
+                // You can send the formData to the server using AJAX or Fetch API
+                // For simplicity, this example just displays a message.
+
+                uploadStatus.innerHTML = 'Uploading...';
+
+                // Simulating a server response delay (remove this in a real application)
+                setTimeout(() => {
+                    // Display a success message (replace this with actual server response handling)
+                    uploadStatus.innerHTML = `File "${file.name}" uploaded successfully!`;
+                }, 2000);
+            } else {
+                uploadStatus.innerHTML = 'Please select a file.';
+            }
+        }
+    </script>
+</body>
+</html>
