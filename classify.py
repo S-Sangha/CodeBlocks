@@ -291,13 +291,18 @@ if __name__ == "__main__":
     # _ = run_epoch(model, dataloaders["val"],optimizer)
     train_loss = run_epoch(model, dataloaders["train"], optimizer)
     torch.save(model.state_dict(), 'model.pt')
-    
-    
-    for epoch in range(1, 10):
-        print("\nEpoch {}:".format(epoch))
 
-        train_loss = run_epoch(model, dataloaders["train"], optimizer)
-        torch.save(model.state_dict(), 'model.pt')
+    for epoch in range(1, 100):
+            print("\nEpoch {}:".format(epoch))
+            train_loss = run_epoch(model, dataloaders["train"], optimizer)
+
+            if epoch % 4 == 0:
+                valid_loss = run_epoch(model, dataloaders["val"])
+
+                if valid_loss < best_loss:
+                    best_loss = valid_loss
+                    step = int(epoch * len(dataloaders["train"]))
+                    torch.save(model.state_dict(), 'model.pt')
 
 
    
