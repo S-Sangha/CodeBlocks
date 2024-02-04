@@ -1,6 +1,7 @@
 from flask import Flask,render_template, request,jsonify
 import cv2
 import numpy as np
+import call_me
 
 
 file_image = None
@@ -96,12 +97,14 @@ def upload_image():
     
 @app.route('/q1answer')
 def q1a():
+    #returnvalue = call_me.evaluate_submission()
+    #print(returnvalue)
     datashow = {
-        "input":1,
-        "code":"for i in range",
-        "output":2
+        "code":1,
+        "output":2,
     }
-    return render_template('answer.html',data = datashow)
+    
+    return render_template('correct_page.html',data = datashow)
 
 def compute():
     print("compute")
