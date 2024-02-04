@@ -1,0 +1,164 @@
+/* Add your global styles here if needed */
+
+body {
+    font-family: 'Courier New', monospace;
+    margin: 20px auto;
+    background-color: #f0f8ff;
+    color: #000;
+    border: 2px solid #1e90ff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #1e90ff;
+    text-align: center;
+}
+
+/* Add this CSS for the "Home" button */
+.home-button {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #1e90ff;
+}
+
+.button-row-1 {
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.button-row-2 {
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 40px
+}
+
+.button-row-3 {
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 80px
+}
+
+.button-row-4 {
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 40px
+}
+
+.button-row-5 {
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 40px
+}
+.button-row-6 {
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+
+button {
+    border: none;
+    border-radius: 5px;
+    border: 1px solid #1e90ff; /* Royal Blue button border color */
+    cursor: pointer;
+    margin-right: 10px; /* Adjust the margin as needed */
+    padding: 15px 50px;
+    font-family: 'Courier New', monospace;
+}
+
+.orange-button {
+    background-color: #f3c9a0 !important;
+    color: #000 !important;
+}
+
+.blue-button {
+    background-color: #ADD8E6 !important;
+    color: #000 !important;
+}
+.pale-yellow-button {
+    background-color: #e6e6ad !important;
+    color: #000 !important;
+}
+
+.pale-green-button {
+    background-color: #83cd839d !important;
+    color: #000 !important;
+}
+
+.purple-button {
+    background-color: #D8BFD8 !important;
+    color: #000 !important;
+}
+
+.grey-button {
+    background-color: #c0bdc0 !important;
+    color: #000 !important;
+}
+
+/* CSS styles for popups */
+.orange-popup {
+    background-color: #f3c9a0;
+}
+
+.pale-yellow-popup {
+    background-color: #e6e6ad;
+}
+
+.blue-popup {
+    background-color: #ADD8E6;
+}
+
+.pale-green-popup {
+    background-color: #83cd839d;
+}
+
+.purple-popup {
+    background-color: #D8BFD8;
+}
+
+.grey-popup {
+    background-color: #c0bdc0 !important;
+    color: #000 !important;
+}
+
+/* Add styles for other colors as needed */
+.popup {
+    position: relative;
+    display: none;
+    border: 1px solid #1e90ff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.show-popup {
+    display: block;
+}
+
+.close {
+    color: #1e90ff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+

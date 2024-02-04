@@ -1,0 +1,39 @@
+/* style_solution.css */
+
+body {
+    font-family: 'Courier New', monospace;
+    margin: 20px;
+    background-color: #f0f8ff; /* Light Blue background color */
+    color: #000; /* Set text color to black */
+}
+
+h1 {
+    color: #1e90ff; /* Royal Blue heading color */
+    text-align: center; /* Center align the heading */
+}
+
+/* Border around the section with text */
+#textSection {
+    border: 2px solid #1e90ff; /* Royal Blue border color */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto; /* Center the section horizontally */
+    max-width: 600px; /* Set max width for better readability */
+    text-align: center; /* Center align text inside the section */
+}
+
+/* Add this CSS for the "Home" button */
+.home-button {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px; /* Adjust as needed for spacing */
+    text-decoration: none;
+    color: #1e90ff; /* Royal Blue text color */
+}
+
+#solutionContent {
+    margin-top: 20px; /* Adjust as needed for spacing */
+}
+
+/* Add other styles as needed */

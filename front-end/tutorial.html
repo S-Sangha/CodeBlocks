@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link rel="stylesheet" href="style2.css"> <!-- Add a new CSS file for Tutorial page -->
+</head>
+<body>
+    <!-- Tutorial content goes here -->
+    <div id="mainSection">
+
+       
+        <a href="index.html" class="home-button">Home</a>
+        <h1>Tutorial</h1>
+
+        <!-- <h1>Tutorial</h1> -->
+
+       <!-- "What is CodeBlocks?" Section -->
+        <div id="whatIsCodeBlocks">
+            <h2 class="small-heading">How to use CodeBlocks?</h2>
+            <p class="small-text">Rearrange the blocks to build simple programs to solve as many questions as you can! </p>
+        </div>
+
+        <!-- "What is CodeBlocks?" Section -->
+        <div id="codeBlockMeanings">
+            <h2 class="small-heading">What do the CodeBlocks mean?</h2>
+            <p class="small-text"> <i><b>Example question: </b> Write a program to print the number '2', repeated 10 times </i></p>
+            <p class="small-text"> <b><u>Solution</u></b>:</p>
+            <p class="small-text">(Click on an icon below to learn how it can be used in your programs!)</p>
+        </div>
+
+       <!-- Button Grid Section -->
+        <div id="buttonGrid">
+            <div class="button red-button" onclick="togglePopup(0)">repeat</div>
+            <div class="button blue-button" onclick="togglePopup(1)">10</div>
+            <div class="button green-button" onclick="togglePopup(2)">print</div>
+            <div class="button blue-button" onclick="togglePopup(3)">2</div>
+        </div>
+
+        <!-- Pop-up Section -->
+        <div id="popups">
+            <div class="popup red-popup" id="popup0">
+                <span class="close" onclick="togglePopup(0)">&times;</span>
+                <p><b>Repeat:</b> Repeats the below block of code </p>
+            </div>
+            <div class="popup blue-popup" id="popup1">
+                <span class="close" onclick="togglePopup(1)">&times;</span>
+                <p><b>10:</b> How many times to repeat</p>
+            </div>
+            <div class="popup green-popup" id="popup2">
+                <span class="close" onclick="togglePopup(2)">&times;</span>
+                <p><b>Print:</b> Prints the block on the right.</p>
+            </div>
+            <div class="popup blue-popup" id="popup3">
+                <span class="close" onclick="togglePopup(3)">&times;</span>
+                <p><b>2:</b> How many times to print.</p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script> <!-- Add a new JavaScript file for handling pop-ups -->
+</body>
+</html>

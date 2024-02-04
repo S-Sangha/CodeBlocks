@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correct!</title>
+    <link rel="stylesheet" href="style_correct.css">
+</head>
+<body>
+    <div id="contentSection">
+        <a href="index.html" class="home-button">Home</a>
+
+        <h1 class="heading">Correct!</h1>
+        <p class="subheading">You built the correct program :)</p>
+        
+        <p class="body-text">For a more detailed explanation of what each block does, see below!</p>
+
+         <!-- Button Grid Section -->
+         <!-- Button Grid Section -->
+        <div class="button-row-1">
+            <button class="orange-button" onclick="togglePopup(0)">repeat</button>
+            <button class="blue-button" onclick="togglePopup(1)">20</button>
+        </div>
+
+        <div class="button-row-2">
+            <button class="pale-green-button" onclick="togglePopup(2)">if</button>
+            <button class="pale-yellow-button" onclick="togglePopup(3)">divisible</button>
+            <button class="blue-button" onclick="togglePopup(4)">3</button>
+            <button class="pale-green-button" onclick="togglePopup(5)">then</button>
+        </div>
+
+        <div class="button-row-3">
+            <button class="purple-button" onclick="togglePopup(6)">print</button>
+        </div>
+
+        <div class="button-row-4">
+            <button class="grey-button" onclick="togglePopup(7)">end</button>
+        </div>
+
+        <div class="button-row-5">
+            <button class="pale-yellow-button" onclick="togglePopup(8)">+</button>
+            <button class="blue-button" onclick="togglePopup(9)">1</button>
+        </div>
+
+        <div class="button-row-6">
+            <button class="grey-button" onclick="togglePopup(10)">end</button>
+        </div>
+
+
+        <!-- Pop-up Section -->
+        <div id="popups">
+            <div class="popup orange-popup" id="popup0">
+                <span class="close" onclick="togglePopup(0)">&times;</span>
+                <p><b>repeat:</b> Repeats the below block with frequency given by the block on the right </p>
+            </div>
+            <div class="popup blue-popup" id="popup1">
+                <span class="close" onclick="togglePopup(1)">&times;</span>
+                <p><b>20:</b> Specifies frequency to repeat code below</p>
+            </div>
+           
+            <div class="popup pale-green-popup" id="popup2">
+                <span class="close" onclick="togglePopup(2)">&times;</span>
+                <p><b>if:</b> Runs code below depending on whether condition on the right is true </p>
+            </div>
+            <div class="popup pale-yellow-popup" id="popup3">
+                <span class="close" onclick="togglePopup(3)">&times;</span>
+                <p><b>divisible</b> Divisible operator - Determines if our program variable is divisible by the block on the right</p>
+            </div>
+            <div class="popup blue-popup" id="popup4">
+                <span class="close" onclick="togglePopup(4)">&times;</span>
+                <p><b>3:</b> Number to divide program variable by</p>
+            </div>
+            <div class="popup blue-popup" id="popup5">
+                <span class="close" onclick="togglePopup(5)">&times;</span>
+                <p><b>then:</b> Begins if clause</p>
+            </div>
+            <div class="popup purple-popup" id="popup6">
+                <span class="close" onclick="togglePopup(6)">&times;</span>
+                <p><b>print:</b> Prints the current program variable</p>
+            </div>
+            <div class="popup grey-popup" id="popup7">
+                <span class="close" onclick="togglePopup(7)">&times;</span>
+                <p><b>end:</b> End if statement</p>
+            </div>
+            <div class="popup pale-yellow-popup" id="popup8">
+                <span class="close" onclick="togglePopup(8)">&times;</span>
+                <p><b>+:</b> Adds the value on the right to our program variable</p>
+            </div>
+            <div class="popup blue-popup" id="popup9">
+                <span class="close" onclick="togglePopup(9)">&times;</span>
+                <p><b>1:</b> The number to be added to our program variable</p>
+            </div>
+            <div class="popup grey-popup" id="popup10">
+                <span class="close" onclick="togglePopup(10)">&times;</span>
+                <p><b>end:</b> End while statement</p>
+            </div>
+           
+        </div>
+
+
+
+    </div>
+
+    <script src="script3.js"></script> <!-- Add a new JavaScript file for handling pop-ups -->
+
+    
+</body>
+</html>
