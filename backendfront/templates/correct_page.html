@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Correct!</title>
+<style>
+/* Add your global styles here if needed */
+
+body {
+font-family: 'Courier New', monospace;
+margin: 20px auto;
+background-color: #f0f8ff;
+color: #000;
+border: 2px solid #1e90ff;
+border-radius: 10px;
+padding: 20px;
+max-width: 600px;
+text-align: center;
+}
+
+h1 {
+color: #1e90ff;
+text-align: center;
+}
+
+/* Add this CSS for the "Home" button */
+.home-button {
+display: block;
+text-align: left;
+font-size: 14px;
+margin-bottom: 5px;
+text-decoration: none;
+color: #1e90ff;
+}
+
+.button-row-1 {
+font-family: 'Courier New', monospace;
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.button-row-2 {
+font-family: 'Courier New', monospace;
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+margin-left: 40px
+}
+
+.button-row-3 {
+font-family: 'Courier New', monospace;
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+margin-left: 80px
+}
+
+.button-row-4 {
+font-family: 'Courier New', monospace;
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+margin-left: 40px
+}
+
+.button-row-5 {
+font-family: 'Courier New', monospace;
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+margin-left: 40px
+}
+.button-row-6 {
+font-family: 'Courier New', monospace;
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+
+
+button {
+border: none;
+border-radius: 5px;
+border: 1px solid #1e90ff; /* Royal Blue button border color */
+cursor: pointer;
+margin-right: 10px; /* Adjust the margin as needed */
+padding: 15px 50px;
+font-family: 'Courier New', monospace;
+}
+
+.orange-button {
+background-color: #f3c9a0 !important;
+color: #000 !important;
+}
+
+.blue-button {
+background-color: #ADD8E6 !important;
+color: #000 !important;
+}
+.pale-yellow-button {
+background-color: #e6e6ad !important;
+color: #000 !important;
+}
+
+.pale-green-button {
+background-color: #83cd839d !important;
+color: #000 !important;
+}
+
+.purple-button {
+background-color: #D8BFD8 !important;
+color: #000 !important;
+}
+
+.grey-button {
+background-color: #c0bdc0 !important;
+color: #000 !important;
+}
+
+/* CSS styles for popups */
+.orange-popup {
+background-color: #f3c9a0;
+}
+
+.pale-yellow-popup {
+background-color: #e6e6ad;
+}
+
+.blue-popup {
+background-color: #ADD8E6;
+}
+
+.pale-green-popup {
+background-color: #83cd839d;
+}
+
+.purple-popup {
+background-color: #D8BFD8;
+}
+
+.grey-popup {
+background-color: #c0bdc0 !important;
+color: #000 !important;
+}
+
+/* Add styles for other colors as needed */
+.popup {
+position: relative;
+display: none;
+border: 1px solid #1e90ff;
+padding: 10px;
+border-radius: 5px;
+}
+
+.show-popup {
+display: block;
+}
+
+.close {
+color: #1e90ff;
+font-size: 20px;
+font-weight: bold;
+cursor: pointer;
+position: absolute;
+top: 5px;
+right: 10px;
+}
+
+
+</style>
+</head>
+<body>
+<div id="contentSection">
+<a href="/" class="home-button">Home</a>
+
+<h1 class="heading">Correct!</h1>
+
+<p class="subheading">You built the correct program :)</p>
+
+<p class="body-text">For a more detailed explanation of what each block does, see below!</p>
+
+<!-- Button Grid Section -->
+<!-- Button Grid Section -->
+<div class="button-row-1">
+<button class="orange-button" onclick="togglePopup(0)">repeat</button>
+<button class="blue-button" onclick="togglePopup(1)">20</button>
+</div>
+
+<div class="button-row-2">
+<button class="pale-green-button" onclick="togglePopup(2)">if</button>
+<button class="pale-yellow-button" onclick="togglePopup(3)">divisible</button>
+<button class="blue-button" onclick="togglePopup(4)">3</button>
+<button class="pale-green-button" onclick="togglePopup(5)">then</button>
+</div>
+
+<div class="button-row-3">
+<button class="purple-button" onclick="togglePopup(6)">print</button>
+</div>
+
+<div class="button-row-4">
+<button class="grey-button" onclick="togglePopup(7)">end</button>
+</div>
+
+<div class="button-row-5">
+<button class="pale-yellow-button" onclick="togglePopup(8)">+</button>
+<button class="blue-button" onclick="togglePopup(9)">1</button>
+</div>
+
+<div class="button-row-6">
+<button class="grey-button" onclick="togglePopup(10)">end</button>
+</div>
+
+
+<!-- Pop-up Section -->
+<div id="popups">
+<div class="popup orange-popup" id="popup0">
+<span class="close" onclick="togglePopup(0)">&times;</span>
+<p><b>repeat:</b> Repeats the below block with frequency given by the block on the right </p>
+</div>
+<div class="popup blue-popup" id="popup1">
+<span class="close" onclick="togglePopup(1)">&times;</span>
+<p><b>20:</b> Specifies frequency to repeat code below</p>
+</div>
+<div class="popup pale-green-popup" id="popup2">
+<span class="close" onclick="togglePopup(2)">&times;</span>
+<p><b>if:</b> Runs code below depending on whether condition on the right is true </p>
+</div>
+<div class="popup pale-yellow-popup" id="popup3">
+<span class="close" onclick="togglePopup(3)">&times;</span>
+<p><b>divisible</b> Divisible operator - Determines if our program variable is divisible by the block on the right</p>
+</div>
+<div class="popup blue-popup" id="popup4">
+<span class="close" onclick="togglePopup(4)">&times;</span>
+<p><b>3:</b> Number to divide program variable by</p>
+</div>
+<div class="popup blue-popup" id="popup5">
+<span class="close" onclick="togglePopup(5)">&times;</span>
+<p><b>then:</b> Begins if clause</p>
+</div>
+<div class="popup purple-popup" id="popup6">
+<span class="close" onclick="togglePopup(6)">&times;</span>
+<p><b>print:</b> Prints the current program variable</p>
+</div>
+<div class="popup grey-popup" id="popup7">
+<span class="close" onclick="togglePopup(7)">&times;</span>
+<p><b>end:</b> End if statement</p>
+</div>
+<div class="popup pale-yellow-popup" id="popup8">
+<span class="close" onclick="togglePopup(8)">&times;</span>
+<p><b>+:</b> Adds the value on the right to our program variable</p>
+</div>
+<div class="popup blue-popup" id="popup9">
+<span class="close" onclick="togglePopup(9)">&times;</span>
+<p><b>1:</b> The number to be added to our program variable</p>
+</div>
+<div class="popup grey-popup" id="popup10">
+<span class="close" onclick="togglePopup(10)">&times;</span>
+<p><b>end:</b> End while statement</p>
+</div>
+</div>
+
+
+
+</div>
+
+<script>
+
+// Function to toggle pop-up visibility
+function togglePopup(buttonIndex) {
+const popup = document.querySelector(`#popup${buttonIndex}`);
+popup.classList.toggle('show-popup');
+}
+
+</script>
+
+
+</body>
+</html>
