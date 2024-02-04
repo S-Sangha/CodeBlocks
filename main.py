@@ -2,6 +2,7 @@ import cv2
 import pytesseract
 import numpy as np
 
+
 def sort_bounding_boxes(bounding_boxes):
     # Sort bounding boxes based on top-left y-coordinate, then x-coordinate
     sorted_boxes = sorted(bounding_boxes, key=lambda box: (box[1], box[0]))
@@ -37,7 +38,7 @@ def find_bounding_boxes(image):
 
     cnts = cnts[0] if len(cnts) == 2 else cnts[1]
     bounding_boxes = list(map(cv2.boundingRect, cnts))
-    bounding_boxes = list(filter(lambda b : b[2] * b[3] > 3000, bounding_boxes))
+    bounding_boxes = list(filter(lambda b : b[2] * b[3] > 3000 and b[2] * b[3] < 800000, bounding_boxes))
     bounding_boxes = sort_bounding_boxes(bounding_boxes)
     return bounding_boxes
 
@@ -62,6 +63,8 @@ def normalise_token(text):
             return "1"    
         case "÷":
             return "div"
+        case "a":
+            return "add"
         # If an exact match is not confirmed, this last case will be used if provided
         case _:
             if len(token) == 0:
@@ -106,7 +109,11 @@ def extract_code_from_boxes(image, bounding_boxes):
             box_path = 'tmp.png'
             cv2.imwrite(box_path, box)
             token = image_to_text(box_path)
+            print(token)
             line.append(token)
+            # token.replace('/', ' ')
+            # tokens = token.split()
+            # line.extend(tokens)
         code_tokens.append(line)
     return code_tokens
 
@@ -143,7 +150,9 @@ def annotate_image(image):
 
 
 if __name__ == "__main__":
-    image = cv2.imread('/Users/sksangha/year4/ichack24/CodeBlocks/simple_program_examples/eg11.jpg')
+    image = cv2.imread('/Users/sksangha/year4/ichack24/CodeBlocks/simple_program_examples/wrong_hours2.jpg')
+    # image = cv2.imread('/Users/sksangha/year4/ichack24/CodeBlocks/other/eg2.jpg')
+
     # image = cv2.imread('/Users/sksangha/year4/ichack24/CodeBlocks/images/flash.jpg')
     annotate_image(image)
     analyse_image(image)
